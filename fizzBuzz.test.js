@@ -69,7 +69,7 @@ const generate_fizzbuzz_array = (number) => {
 };
 
 describe("Test for exercise 2", () => {
-    it("Count up to given number and return range array", () => {
+    it("Count up to 5 and return range array with fizzbuzz", () => {
         // Arrange
         const param = 5;
 
@@ -80,4 +80,17 @@ describe("Test for exercise 2", () => {
         expect(result).toStrictEqual([ 1, 2, "Fizz", 4, "Buzz" ]);
 
     });
+
+    it("Count up to 15 and return range array with fizzbuzz", () => {
+        //Arrange 
+        const param = 15;
+
+        //Act
+        const result = generate_fizzbuzz_array(param);
+        console.log(result);
+
+        //Assert 
+        expect(result).toStrictEqual([1,2,"Fizz", 4, "Buzz", "Fizz", 7,8,"Fizz", "Buzz", 11, "Fizz", 13, 14, "FizzBuzz"]);
+    })
 });
+
