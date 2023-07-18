@@ -1,57 +1,79 @@
 const prod_code = (number) => {
-  if (number % 3 == 0 && number % 5 == 0) {
-    return "FizzBuzz";
-  } else if (number % 3 == 0) {
-    return "Fizz";
-  } else if (number % 5 == 0) {
-    return "Buzz";
-  } else return number;
+    if (number % 3 == 0 && number % 5 == 0) {
+        return "FizzBuzz";
+    } else if (number % 3 == 0) {
+        return "Fizz";
+    } else if (number % 5 == 0) {
+        return "Buzz";
+    } else return number;
 };
 
 describe("Fizz Buzz", () => {
-  it("Returns Fizz if the number is divisible by 3", () => {
-    // Arrange
-    const param = 3;
+    it("Returns Fizz if the number is divisible by 3", () => {
+        // Arrange
+        const param = 3;
 
-    // Act
-    const result = prod_code(param);
+        // Act
+        const result = prod_code(param);
 
-    // Assert
-    expect(result).toBe("Fizz");
-  });
+        // Assert
+        expect(result).toBe("Fizz");
+    });
 
-  it("Returns Buzz if the number is divisible by 5", () => {
-    // Arrange
-    const param = 5;
+    it("Returns Buzz if the number is divisible by 5", () => {
+        // Arrange
+        const param = 5;
 
-    // Act
-    const result = prod_code(param);
+        // Act
+        const result = prod_code(param);
 
-    // Assert
-    expect(result).toBe("Buzz");
-  });
+        // Assert
+        expect(result).toBe("Buzz");
+    });
 
-  it("Returns Fizzbuzz if the number is divisible by 3 & 5", () => {
-    // Arrange
-    const param = 15;
+    it("Returns Fizzbuzz if the number is divisible by 3 & 5", () => {
+        // Arrange
+        const param = 15;
 
-    // Act
-    const result = prod_code(param);
+        // Act
+        const result = prod_code(param);
 
-    // Assert
-    expect(result).toBe("FizzBuzz");
-  });
+        // Assert
+        expect(result).toBe("FizzBuzz");
+    });
 
-  it("Returns the number if it's not divisible by 3 & 5", () => {
-    // Arrange
-    const param = 17;
+    it("Returns the number if it's not divisible by 3 & 5", () => {
+        // Arrange
+        const param = 17;
 
-    // Act
-    const result = prod_code(param);
+        // Act
+        const result = prod_code(param);
 
-    // Assert
-    expect(result).toBe(17);
-  }); 
+        // Assert
+        expect(result).toBe(17);
+    });
+});
 
-  
+//-----------------
+//-- Ex 2
+//-----------------
+const count_upto_max = (number) => {
+    let our_array = [];
+    for (let i = 1; i <= number; i++) {
+        our_array.push(i);
+    }
+    return our_array;
+};
+
+describe("Test for exercise 2", () => {
+    it("Count up to given number and return range array", () => {
+        // Arrange
+        const param = 5;
+
+        // Act
+        const result = count_upto_max(param);
+
+        // Assert
+        expect(result).toBe([1, 2, 3, 4, 5]);
+    });
 });
