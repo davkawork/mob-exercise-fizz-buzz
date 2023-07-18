@@ -57,13 +57,15 @@ describe("Fizz Buzz", () => {
 //-----------------
 //-- Ex 2
 //-----------------
-const count_upto_max = (number) => {
-    let our_array = [];
+const generate_fizzbuzz_array = (number) => {
+    let fizzbuzz_array = [];
+
     for (let i = 1; i <= number; i++) {
         value = prod_code(i);
-        our_array.push(value);
+        fizzbuzz_array.push(value);
     }
-    return our_array;
+
+    return fizzbuzz_array;
 };
 
 describe("Test for exercise 2", () => {
@@ -72,9 +74,8 @@ describe("Test for exercise 2", () => {
         const param = 5;
 
         // Act
-        const result = count_upto_max(param);
-        console.log(result);
-
+        const result = generate_fizzbuzz_array(param);
+        
         // Assert
         expect(result).toStrictEqual([ 1, 2, "Fizz", 4, "Buzz" ]);
 
