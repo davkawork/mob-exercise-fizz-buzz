@@ -60,7 +60,8 @@ describe("Fizz Buzz", () => {
 const count_upto_max = (number) => {
     let our_array = [];
     for (let i = 1; i <= number; i++) {
-        our_array.push(i);
+        value = prod_code(i);
+        our_array.push(value);
     }
     return our_array;
 };
@@ -72,8 +73,10 @@ describe("Test for exercise 2", () => {
 
         // Act
         const result = count_upto_max(param);
+        console.log(result);
 
         // Assert
-        expect(result).toBe([1, 2, 3, 4, 5]);
+        expect(result).toStrictEqual([ 1, 2, "Fizz", 4, "Buzz" ]);
+
     });
 });
