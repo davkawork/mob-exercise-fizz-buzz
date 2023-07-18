@@ -1,28 +1,27 @@
 const prod_code = (number) => {
-if(number % 3 == 0){
+  if (number % 3 == 0 && number % 5 == 0) {
+    return "FizzBuzz";
+  } else if (number % 3 == 0) {
     return "Fizz";
-}
-if(number % 5 == 0){
+  } else if (number % 5 == 0) {
     return "Buzz";
-}
-
-return false;
+  } else return false;
 };
 
-describe('Fizz Buzz', () => {
+describe("Fizz Buzz", () => {
+  it("Returns Fizz if the number is divisible by 3", () => {
+    expect(prod_code(3)).toBe("Fizz");
+  });
 
-    it('Returns Fizz if the number is divisible by 3', () => {
-        expect(prod_code(3)).toBe("Fizz");
-    });
+  it("Returns Buzz if the number is divisible by 5", () => {
+    expect(prod_code(5)).toBe("Buzz");
+  });
 
-    it('Returns Buzz if the number is divisible by 5', () => {
-        expect(prod_code(5)).toBe("Buzz");
-    });
+  it("Returns Fizzbuzz if the number is divisible by 3 & 5", () => {
+    expect(prod_code(15)).toBe("FizzBuzz");
+  });
 
-
-        // Arrange
-        // Act
-        // Assert
-
-
+  // Arrange
+  // Act
+  // Assert
 });
