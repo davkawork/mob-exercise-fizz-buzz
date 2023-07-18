@@ -1,96 +1,92 @@
-const detect_fizzbuzz = (number) => {
-    if (number % 3 == 0 && number % 5 == 0) {
-        return "FizzBuzz";
-    } else if (number % 3 == 0) {
-        return "Fizz";
-    } else if (number % 5 == 0) {
-        return "Buzz";
-    } else return number;
-};
+import { detect_fizzbuzz, generate_fizzbuzz_array } from "./fizzBuzz";
 
 describe("Fizz Buzz", () => {
-    it("Returns Fizz if the number is divisible by 3", () => {
-        // Arrange
-        const param = 3;
+  it("Returns Fizz if the number is divisible by 3", () => {
+    // Arrange
+    const param = 3;
 
-        // Act
-        const result = detect_fizzbuzz(param);
+    // Act
+    const result = detect_fizzbuzz(param);
 
-        // Assert
-        expect(result).toBe("Fizz");
-    });
+    // Assert
+    expect(result).toBe("Fizz");
+  });
 
-    it("Returns Buzz if the number is divisible by 5", () => {
-        // Arrange
-        const param = 5;
+  it("Returns Buzz if the number is divisible by 5", () => {
+    // Arrange
+    const param = 5;
 
-        // Act
-        const result = detect_fizzbuzz(param);
+    // Act
+    const result = detect_fizzbuzz(param);
 
-        // Assert
-        expect(result).toBe("Buzz");
-    });
+    // Assert
+    expect(result).toBe("Buzz");
+  });
 
-    it("Returns Fizzbuzz if the number is divisible by 3 & 5", () => {
-        // Arrange
-        const param = 15;
+  it("Returns Fizzbuzz if the number is divisible by 3 & 5", () => {
+    // Arrange
+    const param = 15;
 
-        // Act
-        const result = detect_fizzbuzz(param);
+    // Act
+    const result = detect_fizzbuzz(param);
 
-        // Assert
-        expect(result).toBe("FizzBuzz");
-    });
+    // Assert
+    expect(result).toBe("FizzBuzz");
+  });
 
-    it("Returns the number if it's not divisible by 3 & 5", () => {
-        // Arrange
-        const param = 17;
+  it("Returns the number if it's not divisible by 3 & 5", () => {
+    // Arrange
+    const param = 17;
 
-        // Act
-        const result = detect_fizzbuzz(param);
+    // Act
+    const result = detect_fizzbuzz(param);
 
-        // Assert
-        expect(result).toBe(17);
-    });
+    // Assert
+    expect(result).toBe(17);
+  });
 });
 
 //-----------------
 //-- Ex 2
 //-----------------
-const generate_fizzbuzz_array = (number) => {
-    let fizzbuzz_array = [];
-
-    for (let i = 1; i <= number; i++) {
-        value = detect_fizzbuzz(i);
-        fizzbuzz_array.push(value);
-    }
-
-    return fizzbuzz_array;
-};
 
 describe("Test for exercise 2", () => {
-    it("Count up to 5 and return range array with fizzbuzz", () => {
-        // Arrange
-        const param = 5;
+  it("Count up to 5 and return range array with fizzbuzz", () => {
+    // Arrange
+    const param = 5;
 
-        // Act
-        const result = generate_fizzbuzz_array(param);
-        
-        // Assert
-        expect(result).toStrictEqual([ 1, 2, "Fizz", 4, "Buzz" ]);
+    // Act
+    const result = generate_fizzbuzz_array(param);
 
-    });
+    // Assert
+    expect(result).toStrictEqual([1, 2, "Fizz", 4, "Buzz"]);
+  });
 
-    it("Count up to 15 and return range array with fizzbuzz", () => {
-        //Arrange 
-        const param = 15;
+  it("Count up to 15 and return range array with fizzbuzz", () => {
+    //Arrange
+    const param = 15;
 
-        //Act
-        const result = generate_fizzbuzz_array(param);
-        console.log(result);
+    //Act
+    const result = generate_fizzbuzz_array(param);
+    console.log(result);
 
-        //Assert 
-        expect(result).toStrictEqual([1,2,"Fizz", 4, "Buzz", "Fizz", 7,8,"Fizz", "Buzz", 11, "Fizz", 13, 14, "FizzBuzz"]);
-    })
+    //Assert
+    expect(result).toStrictEqual([
+      1,
+      2,
+      "Fizz",
+      4,
+      "Buzz",
+      "Fizz",
+      7,
+      8,
+      "Fizz",
+      "Buzz",
+      11,
+      "Fizz",
+      13,
+      14,
+      "FizzBuzz"
+    ]);
+  });
 });
-
