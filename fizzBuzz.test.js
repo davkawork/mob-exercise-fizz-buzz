@@ -1,4 +1,4 @@
-const prod_code = (number) => {
+const detect_fizzbuzz = (number) => {
     if (number % 3 == 0 && number % 5 == 0) {
         return "FizzBuzz";
     } else if (number % 3 == 0) {
@@ -14,7 +14,7 @@ describe("Fizz Buzz", () => {
         const param = 3;
 
         // Act
-        const result = prod_code(param);
+        const result = detect_fizzbuzz(param);
 
         // Assert
         expect(result).toBe("Fizz");
@@ -25,7 +25,7 @@ describe("Fizz Buzz", () => {
         const param = 5;
 
         // Act
-        const result = prod_code(param);
+        const result = detect_fizzbuzz(param);
 
         // Assert
         expect(result).toBe("Buzz");
@@ -36,7 +36,7 @@ describe("Fizz Buzz", () => {
         const param = 15;
 
         // Act
-        const result = prod_code(param);
+        const result = detect_fizzbuzz(param);
 
         // Assert
         expect(result).toBe("FizzBuzz");
@@ -47,7 +47,7 @@ describe("Fizz Buzz", () => {
         const param = 17;
 
         // Act
-        const result = prod_code(param);
+        const result = detect_fizzbuzz(param);
 
         // Assert
         expect(result).toBe(17);
@@ -61,7 +61,7 @@ const generate_fizzbuzz_array = (number) => {
     let fizzbuzz_array = [];
 
     for (let i = 1; i <= number; i++) {
-        value = prod_code(i);
+        value = detect_fizzbuzz(i);
         fizzbuzz_array.push(value);
     }
 
